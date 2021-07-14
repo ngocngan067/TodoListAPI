@@ -89,6 +89,7 @@ function addTask() {
 
 function changeStatus(id, name, status) {
   var result = confirm('Do you want to change status this item?');
+  
   if (result) {
     isLoading(true);
     let data = {
@@ -98,8 +99,8 @@ function changeStatus(id, name, status) {
     taskService.updateTaskListApi(id, data).then(res => {
       getTask();
       isLoading(false);
-    })
-    alert('Change status successfully!') 
+      alert('Change status successfully!')
+    })   
   }
 }
 
